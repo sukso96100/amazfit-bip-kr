@@ -23,3 +23,4 @@ MIT License
   - [bipfont.py](https://github.com/amazfitbip/tools/blob/master/bipfont.py) - 폰트 해제, 리패키징에 사용하는 도구
 - [폰트 작업 후기(개인블로그)](https://youngbin.xyz/blog/2018/02/21/amazfit-bip-hangul-font.html)
 - [폰트 작업 후기(Steemit)](https://steemit.com/kr/@youngbin/amazfit-bip)
+- [yener90/bip_translator - Amazfit Bip 펌웨어 번역 패치 툴](https://github.com/yener90/bip_translator)
