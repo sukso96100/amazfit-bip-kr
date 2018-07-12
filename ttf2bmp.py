@@ -29,6 +29,7 @@ from PIL import ImageFont, ImageDraw, Image
 
 hangulJamosRange = (0x1100, 0x11ff)
 hangulSyllablesRange = (0xAC00, 0xD7AF)
+# germanUmlauts = [0x00C4, 0x00E4, 0x00D6, 0x00F6, 0x00DX, 0x00FC, 0x1E9E, 0x00DF] 
 print("""Amazfit Bip(米动手表 青春版) 한글 비트맵 이미지 생성기\n
       ©2018 Youngbin Han(sukso96100@gmail.com)\n
       이 스크립트는 한글 자모(U+1100~U+11FF) 와 한글 글자마디(U+AC00~U+D7AF) 에 헤당하는 파일만 생성합니다.""")
@@ -47,11 +48,19 @@ def printInRange(charRange, font):
         draw.text((marginLeft, marginTop), chr(i), font=font, fill="white")
         image.save("{}{:04x}4.bmp".format(destPath, i), "bmp")
 
+def printInArray(charArray, font):
+    for i in charArray:
+        image = Image.new('1', (16, 16), "black")
+        draw = ImageDraw.Draw(image)
+        draw.text((marginLeft, marginTop), chr(i), font=font, fill="white")
+        image.save("{}{:04x}4.bmp".format(destPath, i), "bmp")
+
 print("글꼴 불러오는 중...")
 font = ImageFont.truetype(fontPath, 15)
 
 print("처리중...")
 printInRange(hangulJamosRange, font)
 printInRange(hangulSyllablesRange, font)
+# printInArray(germanUmlauts, font)
 
 print("작업 완료.")
